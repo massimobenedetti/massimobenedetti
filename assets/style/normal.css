@@ -12,3 +12,17 @@ body {
   color: CanvasText;
   color-scheme: light dark;
 }
+
+h1 {
+  animation: --h1 infinite 2s alternate ease-in-out;
+  transform-origin: 15% center;
+}
+
+@keyframes --h1 {
+  0% {
+    scale:1;
+  }
+  100% {
+    scale:1.2;
+  }
+}
