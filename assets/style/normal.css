@@ -1,16 +1,97 @@
 /* HIER KOMT JOUW CSS */
 @font-face {
   font-family: "Racing Sans One";
-  src: url("fonts/Racing_Sans_One.zip");
+  src: url("./fonts/RacingSansOne-Regular.ttf") format("truetype");
   font-weight: 400;
   font-style: normal;
 }
 
 body {
-  font-family: "Comic Relief", system-ui;
-  background-color: Canvas;
-  color: CanvasText;
-  color-scheme: light dark;
+  margin: 0;
+  padding: 0;
+
+  background-color: #242424;
+  color: white;
+
+  font-family: "Racing Sans One", sans-serif;
+}
+
+
+body {
+  background-image:
+  linear-gradient(
+    45deg,
+    #2d2d2d 25%,
+    transparent 25%,
+    transparent 75%,
+    #2d2d2d 75%
+  ),
+  linear-gradient(
+    45deg,
+    #2d2d2d 25%,
+    transparent 25%,
+    transparent 75%,
+    #2d2d2d 75%
+  );
+  background-size: 5em 5em;
+  background-position:
+  0 0,
+  2.5em 2.5em;
+
+  background-attachment: fixed;
+  
+}
+
+.page {
+  width: min(100%, 650px);
+  margin: 0 auto;
+  padding: 2em 1.2em 3em;
+}
+
+.intro {
+  text-align: center;
+  margin-bottom: 3em;
+}
+
+.intro h1 {
+  margin: 0;
+  color: white;
+  font-family: "Racing Sans One", sans-serif;
+  line-height: 0.95;
+  font-style: normal;
+  font-weight: 400;
+}
+
+
+.timeline-item {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1em;
+  margin-bottom: 2.5em;
+  padding: 0.7em 0.8em 0.7em 1.2em;
+  background-color: #303030;
+  border: 2px solid #a9a9a9;
+  border-radius: 0.9em;
+}
+
+
+@media (width > 40em) {
+  .timeline-item {
+    grid-template-columns: 19fr 15fr;
+    align-items: center;
+  }
+}
+
+
+.text h2 {
+  margin: 0 0 0.1em;
+  color: #ff2028;
+  font-family: "Racing Sans One" , sans-serif;
+  font-size: clamp(3rem, 12vw, 5rem);
+  line-height: 0.85;
+  font-style: normal;
+  font-weight: 400;
+  letter-spacing: 0.08em;
 }
 
 
