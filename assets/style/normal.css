@@ -6,12 +6,43 @@
   font-style: normal;
 }
 
-body {
-  margin: 0;
-  padding: 0;
 
-  background-color: #242424;
-  color: white;
+html {
+  color-scheme: light dark;
+
+  --background: light-dark(#f2f2f2, #242424);
+  --card-background: light-dark(#ffffff, #303030);
+  --color: light-dark(#242424, #ffffff);
+  --border: light-dark(#555555, #a9a9a9);
+  --pattern: light-dark(#dddddd, #2d2d2d);
+  --accent: #ff2028;
+}
+
+html:has( [value="light-theme"]:checked ) {
+  color-scheme:light;
+}
+
+html:has( [value="dark-theme"]:checked ) {
+  color-scheme:dark;
+}
+
+.theme-switcher {
+  display: flex;
+  justify-content: center;
+  gap: 1em;
+  margin-bottom: 2em;
+  color: var(--color);
+}
+
+.theme-switcher label {
+  cursor: pointer;
+}
+
+
+body {
+  
+  background-color: var(--background);
+  color: var(--color);
 
   font-family: "Racing Sans One", sans-serif;
 }
@@ -19,20 +50,22 @@ body {
 
 /* ACHTERGROND */
 body {
+  background-color: var(--background);
+
   background-image:
   linear-gradient(
     45deg,
-    #2d2d2d 25%,
+    var(--pattern) 25%,
     transparent 25%,
     transparent 75%,
-    #2d2d2d 75%
+    var(--pattern) 75%
   ),
   linear-gradient(
     45deg,
-    #2d2d2d 25%,
+    var(--pattern) 25%,
     transparent 25%,
     transparent 75%,
-    #2d2d2d 75%
+    var(--pattern) 75%
   );
   background-size: 5em 5em;
   background-position:
@@ -198,4 +231,22 @@ body {
   100% {
     scale:1.2;
   }
+}
+
+.theme-switcher {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  margin: 20px 0;
+  padding: 20px;
+  background: white;
+  color: black;
+  font-family: sans-serif;
+}
+
+.theme-switcher input {
+  appearance: auto;
+  display: inline-block;
+  width: auto;
+  height: auto;
 }
