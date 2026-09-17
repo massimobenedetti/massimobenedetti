@@ -26,19 +26,6 @@ html:has( [value="dark-theme"]:checked ) {
   color-scheme:dark;
 }
 
-.theme-switcher {
-  display: flex;
-  justify-content: center;
-  gap: 1em;
-  margin-bottom: 2em;
-  color: var(--color);
-}
-
-.theme-switcher label {
-  cursor: pointer;
-}
-
-
 body {
   
   background-color: var(--background);
@@ -233,20 +220,3 @@ body {
   }
 }
 
-.theme-switcher {
-  display: flex;
-  gap: 20px;
-  justify-content: center;
-  margin: 20px 0;
-  padding: 20px;
-  background: white;
-  color: black;
-  font-family: sans-serif;
-}
-
-.theme-switcher input {
-  appearance: auto;
-  display: inline-block;
-  width: auto;
-  height: auto;
-}
