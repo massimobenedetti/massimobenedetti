@@ -1,7 +1,7 @@
 /* HIER KOMT JOUW CSS */
 @font-face {
   font-family: "Racing Sans One";
-  src: url("../../fonts/RacingSansOne-Regular.ttf") format("truetype");
+  src: url("../../../fonts/RacingSansOne-Regular kopie.ttf") format("truetype");
   font-weight: 400;
   font-style: normal;
 }
@@ -64,19 +64,34 @@ body {
 }
 
 /* PAGINA */
-.page {
+main {
   width: min(100%, 650px);
   margin: 0 auto;
   padding: 2em 1.2em 3em;
 }
 
+/* DARKLIGHT WISSELAAR*/
+
+nav {
+  display: flex;
+  justify-content: center;
+  gap: 1em;
+  margin-bottom: 3em;
+  color: var(--color);
+}
+
+nav label {
+  cursor: pointer;
+}
+
+
 /* TITEL */
-.intro {
+header {
   text-align: center;
   margin-bottom: 3em;
 }
 
-.intro h1 {
+header h1 {
   margin: 0;
   color: var(--color);
   font-family: "Racing Sans One", sans-serif;
@@ -86,7 +101,7 @@ body {
 }
 
 /* BLOKKEN TIJDLIJN */
-.timeline-item {
+section {
   display: grid;
   grid-template-columns: 1fr;
   gap: 1em;
@@ -99,14 +114,14 @@ body {
 
 /* LAYOUT LAPTOP FORMAAT */
 @media (width > 40em) {
-  .timeline-item {
+  section {
     grid-template-columns: 19fr 15fr;
     align-items: center;
   }
 }
 
 /* JAARTALLEN */
-.text h2 {
+section article h2 {
   margin: 0 0 0.1em;
   color: #ff2028;
   font-family: "Racing Sans One" , sans-serif;
@@ -118,10 +133,10 @@ body {
 }
 
 /* TEKSTEN */
-.text p {
+section article p {
   margin: 0.6em 0 0;
   color: var(--color);
-  font-family: "Racing Sans One", sans-serief;
+  font-family: "Racing Sans One", sans-serif;
   font-size: clamp(0.85rem, 2.8vw, 1.2rem);
   line-height: 1.25;
   font-style: normal;
@@ -129,7 +144,7 @@ body {
 }
 
 /* ENKELE AFBEELDINGEN */
-.timeline-item > img {
+section > img {
   display: block;
   width: 100%;
   aspect-ratio: 1/1;
@@ -138,14 +153,14 @@ body {
 }
 
 /* DUBBELE AFBEELDINGEN */
-.images {
+figure {
   display: grid;
   grid-template-columns: 1fr;
   gap: 0.5em;
 }
 
 
-.images img {
+figure img {
   display: block;
   width: 100%;
   aspect-ratio: 1/1;
@@ -153,29 +168,37 @@ body {
   border-radius: 0.8em;
 }
   
-/* GROTERE BLOKKEN */
-.timeline-item.large {
-  align-items: start;
+/* VOETER */
+
+footer{
+  text-align: center;
+  padding: 2em;
+  color: var(--color);
 }
+
 
 
 /* MOBIEL FORMAAT */
 
 @media (width <= 40em) {
-  .page{
+  main {
     width: 100%;
     padding: 1.2em 1em 2em;
   }
 
-  .intro {
+  header {
     margin-bottom: 2.5em;
   }
 
-  .intro h1 {
+  header h1 {
     font-size: 12vw;
   }
 
-  .timeline-item {
+  nav {
+    margin-bottom: 2em;
+  }
+
+  section {
     grid-template-columns: 1fr;
     gap: 1em;
     margin-bottom: 2em;
@@ -183,28 +206,28 @@ body {
     border-radius: 0.8em;
   }
 
-  .text h2 {
+  section article h2 {
     font-size: 13vw;
     letter-spacing: 0.04em;
   }
 
-  .text p {
+  section article p {
     font-size: 3.2vw;
     line-height: 1.3;
   }
 
-  .timeline-item > img {
+  section > img {
     width: 100%;
     aspect-ratio: 16/9;
     border-radius: 0.7em;
   }
 
-  .images {
+  figure {
     grid-template-columns: 1fr 1fr;
     gap: 0.5em;
   }
 
-  .images img {
+  figure img {
     aspect-ratio: 1/1;
     border-radius: 0.7em;
   }
