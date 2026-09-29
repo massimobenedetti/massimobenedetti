@@ -23,6 +23,138 @@
 
   <body>
 
+    <!-- PRIVACY OVERLAY -->  
+  <aside id="privacy-overlay">
+
+    <!-- KORTE MELDING -->
+  <section id="privacy-kort">
+
+    <header>
+      <h2>PRIVACY OP DEZE WEBSITE</h2>
+    </header>
+
+    <p>
+      Deze website draait via GitHub Pages. Wanneer je de website
+      bezoekt, kan GitHub je IP-adres verwerken voor
+      beveiligingsdoeleinden
+    </p>
+
+    <p>
+      Verder gebruik ik op mijn website geen optionele cookies
+      of andere zaken waarvoor je eerst toestemming moet geven
+    </p>
+
+    <footer>
+      <button id="meer-privacy">
+        MEER OVER PRIVACY
+      </button>
+
+      <button id="begrepen-kort">
+        BEGREPEN
+      </button>
+    </footer>
+
+  </section>   
+
+  <!-- UITGEBREIDE MELDING -->
+   <section id="privacy-uitgebreid" hidden>
+
+    <header>
+      <h2>PRIVACY &amp GEGEVENS</h2>
+    </header>
+
+    <article>
+
+      <h3>Wat gebeurt er als je mijn website bezoekt?</h3>
+
+      <p>
+        Mijn website wordt aangeboden via GitHub Pages. Om de 
+        dienst en de beveiliging ervan te ondersteunen, wordt
+        het IP-adres van een bezoeker door GitHub verwerkt.
+        Dit gebeurt op het moment dat je de website bezoekt.
+      </p>
+
+    </article>
+
+    <article>
+
+      <h3>Hoe zit het met optionele cookies?</h3>
+
+      <p>
+        Voor deze website heb ik geen optionele cookies of
+        analysetools toegevoegd waarvoor je toestemming moet 
+        geven.
+      </p>
+
+    </article>
+
+    <article>
+
+      <h3>Externe inhoud op deze website</h3>
+
+      <p>
+        De fonts die je op deze website ziet, worden rechtstreeks 
+        vanaf mijn eigen website geladen. Hiervoor wordt dus geen 
+        verbinding met een externe dienst gemaakt.
+      </p>
+
+    </article>
+
+    <article>
+
+      <h3>Waarom kan ik niets accepteren of weigeren?</h3>
+
+      <p>
+        Een cookiekeuze heeft alleeb zin wanneer je daadwerkelijk
+        kunt bepalen of bepaalde optionele cookies of diensten
+        worden gebruikt. Op mijn website is dat op dit moment 
+        niet het geval
+      </p>
+
+      <p>
+        Daarom kun je hier wel meer informatie lezen, maar hoef
+        je geen cookies te accepteren of weigeren.
+      </p>
+
+    </article>
+
+    <footer>
+
+      <button id="begrepen-uitgebreid">
+        BEGREPEN
+      </button>
+    </footer>
+   </section>
+  </aside> 
+
+
+ <script>
+  const privacyOverlay = document.querySelector("#privacy-overlay");
+  const privacyKort = document.querySelector("#privacy-kort");
+  const privacyUitgebreid = document.querySelector("#privacy-uitgebreid");
+
+  const meerPrivacy = document.querySelector("#meer-privacy");
+  const begrepenKort = document.querySelector("#begrepen-kort");
+  const begrepenUitgebreid = document.querySelector("#begrepen-uitgebreid");
+
+
+  meerPrivacy.addEventListener("click", function () {
+    privacyKort.hidden = true;
+    privacyUitgebreid.hidden = false;
+  });
+
+
+  begrepenKort.addEventListener("click", function () {
+    privacyOverlay.hidden = true;
+  });
+
+
+  begrepenUitgebreid.addEventListener("click", function () {
+    privacyOverlay.hidden = true;
+  });
+</script>
+  
+
 
    <main>
 
