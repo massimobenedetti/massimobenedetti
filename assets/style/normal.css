@@ -72,23 +72,46 @@ main {
 
 /* DARKLIGHT WISSELAAR*/
 
+nav input {
+  display: none;
+}
+
 nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
   display: flex;
   justify-content: center;
-  gap: 1em;
-  margin-bottom: 3em;
+  gap: 2em;
+  padding: 1em 1.5em;
+  background-color: var(--background);
   color: var(--color);
+
+  z-index: 1000;
 }
 
 nav label {
+  padding: 0.8em 1.5em;
+  font-size: 1.5em;
+  border: 2px solid var(--border);
+  border-radius: 0.6em;
   cursor: pointer;
+  color: var(--color);
+  background-color: var(--card-background);
+}
+
+nav label:has(input:checked) {
+  border: 2px solid #ff2028
 }
 
 
 /* TITEL */
 header {
   text-align: center;
+  margin-top: 5em;
   margin-bottom: 3em;
+  
 }
 
 header h1 {
@@ -243,221 +266,81 @@ footer{
   }
 }
 
-/* PRIVACY OVERLAY */
+/*PRIVACY DIALOG*/
+html:has(dialog:open) {
+      overflow-y:clip;
+    }
 
-#privacy-overlay {
-  position: fixed;
-  inset: 0;
-  z-index: 1000;
-
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  padding: 1.5em;
-
-  background-color: rgba(0, 0, 0, 0.75);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
+dialog {
+  &::backdrop {
+    backdrop-filter: blur(10px);
+  }
 }
 
-/* PRIVACY VENSTER */
+dialog {
+  width: 60vw;
+  height: 75vh;
 
-#privacy-overlay section {
-  width: min(100%, 1100px);
-  max-height: 90vh;
-
-  overflow-y: auto;
-  display: block;
-  padding: 3em;
-  background-color: #303030;
-  border: 5px solid #a9a9a9;
-  border-radius: 2em;
-  color: #ffffff;
+  margin: auto;
+  border: 4px solid var(--border);
+  border-radius: 1.8em;
 }
 
-/* KORTE MELDING */
-
-#privacy-kort {
-  max-width: 1100px;
-}
-
-#privacy-kort header {
-  display: flex;
-  align-items: center;
-  gap: 1em;
-  margin-bottom: 2em;
-  text-align: left;
-}
-
-#privacy-kort h2 {
-  margin: 0;
+dialog h3 {
   color: #ff2028;
-  font-family: "Racing Sans One", sans-serif;
-  font-size: clamp(2.5rem, 6vw, 5rem);
-  line-height: 1;
+  font-size: 80px;
+  text-transform: uppercase;
+  text-align: center;
+  margin-top: 10px;
+  margin-bottom: 15px;
 }
 
-#privacy-kort p {
-  margin: 1.2em 0;
-  font-family: "Racing Sans One", sans-serif;
-  font-size: clamp(1.2rem, 2.5vw, 2rem);
-  line-height: 1.4;
+dialog h4 {
+  font-size: 40px;
+  margin-top: 15px;
+  margin-bottom: 0px;
 }
 
-/* KNOPPEN */
-
-#privacy-overlay footer {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 2em;
-  margin-top: 2.5em;
+dialog p {
+  margin-top: 2px;
+  margin-bottom: 25px;
+  font-size: 28px;
+  color:#d9d9d9
 }
 
-#privacy-overlay button,
-#privacy-overlay a {
-  min-height: 70px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 0.8em 1em;
-  border: 0;
-  border-radius: 0.5em;
-  background-color: #ff2028;
-  color: #000000;
+#begrepen {
   font-family: "Racing Sans One", sans-serif;
-  font-size: clamp(1.2rem, 2.5vw, 2rem);
+  font-size: 28px;
+  width: 35vw;
+  height: 6vw;
+  border: 3px solid var(--border);
+  border-radius: 0.7em;
+  display: block;
+  margin: 15px auto;
   cursor: pointer;
 }
 
-#privacy-overlay button:hover,
-#privacy-overlay a:hover {
-  background-color: #ffffff;
-}
+#privacy-button {
+  position: fixed;
+  right: 30px;
+  bottom: 30px;
 
-/* UITGEBREIDE MELDING */
+  width: 90px;
+  height: 90px;
 
-#privacy-uitgebreid {
-  width: min(100%, 800px);
-  max-height: 78vh;
-  overflow-y: auto;
-  padding: 2em 2.5em;
-}
+  border-radius: 50%;
+  border: 4px solid var(--border);
 
-#privacy-uitgebreid > header {
-  margin-bottom: 2em;
-  text-align: center;
-}
+  background-color: light-dark(#f2f2f2, #242424);
+  color: light-dark(#000000, #ffffff);
 
-#privacy-uitgebreid > header h2 {
-  margin: 0;
-  color: #ff2028;
-  font-family: "Racing Sans One", sans-serif;
-  font-size: 4rem;
-  line-height: 1;
-}
+  font-size: 60px;
 
-#privacy-uitgebreid article {
-  margin-bottom: 1.5em;
-}
-
-#privacy-uitgebreid article h3 {
-  margin: 0 0 0 0.35em;
-  color: #ffffff;
-  font-family: "Racing Sans One", sans-serif;
-  font-size: 1.6rem;
-  line-height: 1.1;
-}
-
-#privacy-uitgebreid article p {
-  margin: 0.3em 0;
-  color: #d9d9d9;
-  font-family: "Racing Sans One", sans-serif;
-  font-size: 1.1rem;
-  line-height: 1.35;
-}
-
-#privacy-uitgebreid > footer {
   display: flex;
-  flex-direction: column;
   align-items: center;
-  gap: 1em;
-  margin-top: 1.5em;
-}
+  justify-content: center;
 
-#privacy-uitgebreid > footer button {
-  width: 400px;
-}
+  cursor: pointer;
 
-/* HIDDEN */
-
-#privacy-overlay [hidden] {
-  display: none;
-}
-
-
-/* MOBIEL */
-
-@media (width <= 40em) {
-
-  #privacy-overlay {
-    padding: 0.8em;
-  }
-
-  #privacy-overlay section {
-    max-height: 94vh;
-    padding: 1.5em;
-    border-width: 3px;
-    border-radius: 1.2em;
-  }
-
-  #privacy-kort header {
-    flex-direction: column;
-    text-align: center;
-  }
-
-  #privacy-kort h2 {
-    font-size: 10vw;
-  }
-
-  #privacy-kort p {
-    font-size: 4.5vw;
-  }
-
-  #privacy-overlay footer {
-    grid-template-columns: 1fr;
-    gap: 0.8em;
-  }
-
-  #privacy-uitgebreid {
-    width: 100%;
-    max-height: 92vh;
-    padding: 1.3em;
-  }
-
-  #privacy-uitgebreid > header {
-    margin-bottom: 1.8em;
-  }
-
-  #privacy-uitgebreid > header h2 {
-    font-size: 10vw;
-  }
-
-  #privacy-uitgebreid article h3 {
-    font-size: 5vw;
-  }
-
-  #privacy-uigebreid article p {
-    font-size: 3.8vw;
-    line-height: 1.35;
-  }
-
-  #privacy-uitgebreid > footer {
-    grid-template-columns: 1fr;
-    gap: 0.8em;
-  }
-}
-
-[hidden] {
-  display: none  !important;
+  z-index: 1000;
 }
