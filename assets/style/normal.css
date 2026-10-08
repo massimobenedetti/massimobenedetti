@@ -344,3 +344,57 @@ dialog p {
 
   z-index: 1000;
 }
+
+/* SCROLL PROGRESS */
+
+#scroll-progress {
+  position: fixed;
+  left: 150px;
+  top: 450px;
+  transform: translateY(-50%);
+
+  width: 18px;
+  height: 75vh;
+
+  background-color: var(--card-background);
+  border: 3px solid var(--border);
+  border-radius: 20px;
+
+  z-index: 900;
+}
+
+#scroll-car {
+  position: absolute;
+  z-index: 2;
+  left: 50%;
+
+  font-size: 75px;
+
+  transform: translateX(-50%);
+
+  animation-name: drive;
+  animation-duration: 1ms;
+  animation-timing-function: linear;
+  animation-timeline: scroll(root block);
+}
+
+#scroll-finish {
+  position: absolute;
+  z-index: 1;
+  left: 50%;
+  bottom: -55px;
+
+  font-size: 65px;
+
+  transform: translateX(-50%);
+}
+
+@keyframes drive {
+  from {
+    top: -30px;
+  }
+
+  to {
+    top: 580px;
+  }
+}
