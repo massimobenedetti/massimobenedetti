@@ -203,8 +203,7 @@ Het idee wat ik voor mijn website heb heeft volgens Justus zeker potentie, ik mo
 Na het volgen van de deep-dive over de light en dark mode heb ik dit toe kunnen passen in mijn eigen webdesign.
 
    <img
-   src="Foto 18-10-2026 om 14.23.jpg"
-   >
+   src="Foto 18-10-2026 om 14.23.jpg">
 
 
 ### 7 sept - Sprint 1 - Ma: Sprintplanning + WS1
