@@ -1,0 +1,120 @@
+/* MARK: fonts */
+@font-face {
+  font-family: 'Seraphs';
+  src: url('font/SeraphsVF.woff2') format('woff2'), /* Modern Browsers */
+}
+/* MARK: items */
+body{
+  font-family: 'Seraphs';
+}
+
+main {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: repeat(12, auto);
+  gap: 20px;
+  padding: 40px;
+}
+
+.intro {
+  grid-column: 1/10;
+  grid-row: 1;
+  font-size: 40px;
+}
+
+.intro em {
+  font-size: 55px;
+  font-style: italic;
+  letter-spacing: -3px;
+}
+
+.intro strong {
+  font-size: 85px;
+  letter-spacing: 5px;
+  text-shadow: 2px 2px 4px blue;
+}
+
+.voice {
+  grid-column: 2/11;
+  grid-row: 2;
+  font-size: 35px;
+}
+
+.voice strong {
+  font-size: 65px;
+  text-transform: uppercase;
+  text-shadow: 3px 2px 1px grey;
+}
+
+h1 {
+  grid-column: 1/12;
+  grid-row: 3;
+  font-size: 75px;
+  line-height: 0.9;
+  font-style: italic;
+}
+
+h2 {
+  grid-column: 1/11;
+  grid-row: 4;
+  font-size: 65px;
+  line-height: 0.9;
+  font-style: italic;
+}
+
+.aside {
+  grid-column: 10/13;
+  grid-row: 3;
+  font-size: 20px;
+}
+
+.running {
+  grid-column: 1/7;
+  grid-row: 5;
+  font-size: 40px;
+  letter-spacing: 8px;
+}
+
+.running strong {
+  font-size: 55px;
+  letter-spacing: 12px;
+}
+
+.shadow {
+  grid-column: 2/10;
+  grid-row: 6;
+  font-size: 40px;
+  letter-spacing: 5px;
+}
+
+.shadow em {
+  font-style: italic;
+  letter-spacing: -4px;
+  text-decoration: line-through;
+}
+
+.shadow strong {
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+} 
+
+.growing {
+  grid-column: 1/9;
+  grid-row: 7;
+  font-size: 42px;
+}
+
+.growing strong {
+  font-size: 65px;
+  letter-spacing: 6px;
+}
+
+.shallow {
+  grid-column: 2/12;
+  grid-row: 8;
+  font-size: 40px;
+}
+
+.shallow em {
+  font-size: 50px;
+  letter-spacing: 3px;
+}
