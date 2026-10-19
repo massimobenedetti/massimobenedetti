@@ -43,7 +43,7 @@ Feedback van Sanne;
 Door afwezigheid ivm ziekte heb ik de afgelopen dagen weinig kunnen doen.
 Ik heb wel een mooi lijstje opgesteld van de feedback en wat ik hiermee wil doen;
 <img
-src="./assets/images/feedback Sanne sprint 2.jpeg"/>
+src="images/feedback Sanne sprint 2.jpeg"/>
 
 
 ### 30 sept - Sprint 2 - Wo: Werkgroep 11
@@ -203,7 +203,7 @@ Het idee wat ik voor mijn website heb heeft volgens Justus zeker potentie, ik mo
 Na het volgen van de deep-dive over de light en dark mode heb ik dit toe kunnen passen in mijn eigen webdesign.
 
    <img
-   src="./assets/images/Foto 18-10-2026 om 14.23.jpg"/>
+   src="images/Foto 18-10-2026 om 14.23.jpg"/>
 
 
 ### 7 sept - Sprint 1 - Ma: Sprintplanning + WS1
