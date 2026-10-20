@@ -13,6 +13,7 @@ html {
   --background: light-dark(#f2f2f2, #242424);
   --card-background: light-dark(#d9d9d9, #303030);
   --color: light-dark(#000000, #ffffff);
+  --dialog-color: light-dark(#4f4f4f, #a9a9a9);
   --border: light-dark(#555555, #a9a9a9);
   --pattern: light-dark(#dddddd, #2d2d2d);
   --accent: #ff2028;
@@ -65,9 +66,11 @@ body {
 
 /* PAGINA */
 main {
-  width: min(100%, 650px);
+  width: 100%;
+  max-width: 900px;
+  box-sizing: border-box;
   margin: 0 auto;
-  padding: 2em 1.2em 3em;
+  padding: 1.5em clamp(1em, 4vw, 3em) 3em;
 }
 
 /* DARKLIGHT WISSELAAR*/
@@ -81,24 +84,55 @@ nav {
   top: 0;
   left: 0;
   width: 100%;
+  box-sizing: border-box;
   display: flex;
   justify-content: center;
-  gap: 2em;
-  padding: 1em 1.5em;
+  gap: clamp(0.2em, 1.5vw, 2em);
+  padding: 0.7em clamp(0.3em, 2vw, 1.5em);
   background-color: var(--background);
   color: var(--color);
-
   z-index: 1000;
+
+  @media (width > 40em) {
+    gap: 2em;
+    padding: 1em 1.5em;
+  }
+
+  label {
+    padding: 0.6em 0.7em;
+    font-size: 1em;
+    cursor: pointer;
+
+    @media (width > 40em) {
+      padding: 0.8em 1.5em;
+      font-size: 1.5em;
+    }
+  }
 }
 
 nav label {
-  padding: 0.8em 1.5em;
-  font-size: 1.5em;
+  padding: clamp(0.4em, 1.5vw, 0.8em);
+  font-size: clamp(0.8rem, 2.5vw, 1.5rem);
   border: 2px solid var(--border);
   border-radius: 0.6em;
   cursor: pointer;
   color: var(--color);
   background-color: var(--card-background);
+
+  @media (width > 40em) {
+    padding: 0.8em 1.5em;
+    font-size: 1.5em;
+  }
+}
+
+nav label:hover {
+  background-color:#676767;
+  border-color: #000000;
+}
+
+html:has([value="light-theme"]:checked) nav label:hover {
+  background-color: #7d7d7d;
+  border-color: #2c2c2c;
 }
 
 nav label:has(input:checked) {
@@ -120,28 +154,27 @@ header h1 {
   font-family: "Racing Sans One", sans-serif;
   line-height: 0.95;
   font-style: normal;
-  font-size: 120px;
+  font-size: clamp(2.5rem, 12vw, 7.5rem);
 }
 
 /* BLOKKEN TIJDLIJN */
 section {
   display: grid;
-  grid-template-columns: 1fr;
-  gap: 1em;
-  margin-bottom: 2.5em;
-  padding: 0.7em 0.8em 0.7em 1.2em;
+  grid-template-columns: minmax(0, 1fr);
+  gap: clamp(1em, 3vw, 1.5em);
+  margin: 2em 0;
+  padding: clamp(0.7em, 3vw, 1.5em);
   background-color: var(--card-background);
   border: 4px solid var(--border);
   border-radius: 0.9em;
-}
 
-/* LAYOUT LAPTOP FORMAAT */
-@media (width > 40em) {
-  section {
-    grid-template-columns: 19fr 15fr;
+
+  @media (width > 40em) {
+    grid-template-columns: minmax(0, 19fr) minmax(0, 15fr);
     align-items: center;
   }
-}
+} 
+
 
 /* JAARTALLEN */
 section article h2 {
@@ -170,16 +203,20 @@ section article p {
 section > img {
   display: block;
   width: 100%;
-  aspect-ratio: 1/1;
+  aspect-ratio: 16/9;
   object-fit: cover;
   border-radius: 0.8em;
+
+  @media (width > 40em) {
+    aspect-ratio: 1/1;
+  }
 }
 
 /* DUBBELE AFBEELDINGEN */
 figure {
   display: grid;
-  grid-template-columns: 1fr;
-  gap: 0.5em;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(0.4em, 1.5vw, 0.8em);
 }
 
 
@@ -193,77 +230,10 @@ figure img {
   
 /* VOETER */
 
-footer{
+footer {
   text-align: center;
   padding: 2em;
   color: var(--color);
-}
-
-
-
-/* MOBIEL FORMAAT */
-
-@media (width <= 40em) {
-  main {
-    width: 100%;
-    padding: 1.2em 1em 2em;
-  }
-
-  header {
-    margin-bottom: 2.5em;
-  }
-
-  header h1 {
-    font-size: 12vw;
-  }
-
-  nav {
-    margin-bottom: 2em;
-  }
-
-  section {
-    grid-template-columns: 1fr;
-    gap: 1em;
-    margin-bottom: 2em;
-    padding: 0.7em 0.7em 1em;
-    border-radius: 0.8em;
-  }
-
-  section article h2 {
-    font-size: 13vw;
-    letter-spacing: 0.04em;
-  }
-
-  section article p {
-    font-size: 3.2vw;
-    line-height: 1.3;
-  }
-
-  section > img {
-    width: 100%;
-    aspect-ratio: 16/9;
-    border-radius: 0.7em;
-  }
-
-  figure {
-    grid-template-columns: 1fr 1fr;
-    gap: 0.5em;
-  }
-
-  figure img {
-    aspect-ratio: 1/1;
-    border-radius: 0.7em;
-  }
-}
-
-
-@keyframes --h1 {
-  0% {
-    scale:1;
-  }
-  100% {
-    scale:1.2;
-  }
 }
 
 /*PRIVACY DIALOG*/
@@ -305,7 +275,7 @@ dialog p {
   margin-top: 2px;
   margin-bottom: 25px;
   font-size: 28px;
-  color:#d9d9d9
+  color: var(--dialog-color)
 }
 
 #begrepen {
@@ -322,71 +292,80 @@ dialog p {
 
 #privacy-button {
   position: fixed;
-  right: 30px;
-  bottom: 30px;
-
-  width: 90px;
-  height: 90px;
-
+  right: 12px;
+  bottom: 12px;
+  width: 55px;
+  height: 55px;
   border-radius: 50%;
-  border: 4px solid var(--border);
-
+  border: 3px solid var(--border);
   background-color: light-dark(#f2f2f2, #242424);
   color: light-dark(#000000, #ffffff);
-
-  font-size: 60px;
-
+  font-size: 35px;
   display: flex;
   align-items: center;
   justify-content: center;
-
   cursor: pointer;
-
   z-index: 1000;
+
+  @media (width > 40em) {
+    right: 30px;
+    bottom: 30px;
+    width: 90px;
+    height: 90px;
+    font-size: 60px;
+  }
 }
 
 /* SCROLL PROGRESS */
 
 #scroll-progress {
   position: fixed;
-  left: 150px;
-  top: 450px;
+  left: clamp(8px, calc(50vw - 470px), 150px);
+  top: 55%;
   transform: translateY(-50%);
-
-  width: 18px;
-  height: 75vh;
-
+  width: 10px;
+  height: 60vh;
   background-color: var(--card-background);
   border: 3px solid var(--border);
   border-radius: 20px;
-
   z-index: 900;
+
+  @media (width > 40em) {
+    width: 18px;
+    height: 75vh;
+  }
 }
 
 #scroll-car {
   position: absolute;
+  top: -30px;
+  left: 50%;
   z-index: 2;
   left: 50%;
-
-  font-size: 75px;
-
+  font-size: 35px;
   transform: translateX(-50%);
-
   animation-name: drive;
   animation-duration: 1ms;
   animation-timing-function: linear;
   animation-timeline: scroll(root block);
+
+  @media (width > 40em) {
+    font-size: 75px;
+  }
 }
 
 #scroll-finish {
   position: absolute;
   z-index: 1;
   left: 50%;
-  bottom: -55px;
-
-  font-size: 65px;
-
+  bottom: -35px;
+  font-size: 35px;
   transform: translateX(-50%);
+
+  @media (width > 40em) {
+    bottom: -55px;
+    font-size: 65px;
+  }
 }
 
 @keyframes drive {
@@ -395,6 +374,6 @@ dialog p {
   }
 
   to {
-    top: 580px;
+    top: calc(100% - 35px);
   }
 }
