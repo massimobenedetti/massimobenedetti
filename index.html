@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="nl">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -7,14 +7,14 @@
     <meta name="color-scheme" content="dark light" />
 
   
-    </style>
+
     <title>Tuintje van Massimo</title>
 
     <link rel="stylesheet" href="./assets/style/normal.css" />
 
-    <!-- Importeer het webring component, voeg jouw eigen domein toe in data-page -->
+    <!-- MARK: WEBRING -->
     <script
-      data-page="[https://massimobenedetti.nl]"
+      data-page="https://massimobenedetti.nl"
       src="https://massimobenedetti.nl/webring.js"
       defer
     ></script>
@@ -23,19 +23,22 @@
 
   <body>
 
-    <!--SCROLL ANIMATIE-->
+    <!-- MARK: SCROLL ANIMATIE-->
     <!--GEBRUIKTE BRON=https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Scroll-driven_animations/Timelines-->
-    <aside id="scroll-progress">
-  <span id="scroll-car">🚗</span>
-  <span id="scroll-finish">🏁</span>
+    <aside id="scroll-progress" aria-label="Voortgang op de pagina">
+  <span id="scroll-car" aria-hidden="true">🚗</span>
+  <span id="scroll-finish" aria-hidden="true">🏁</span>
 </aside>
 
 
-    <!--PRIVACY DIALOG-->
-    
-    <button id="privacy-button" commandfor="mydialog" command="show-modal">
-      🍪
-    </button>
+    <!-- MARK: PRIVACY DIALOG--> 
+    <button 
+    id="privacy-button" 
+    type="button"
+    aria-label="Priavcyinformatie openen"
+    commandfor="mydialog" 
+    command="show-modal"
+    >🍪</button>
 
     <dialog id="mydialog">
       <form method="dialog">
@@ -61,7 +64,6 @@
           maar hoef je geen cookies te 
           accepteren of weigeren.
         </p>
-        </p>
         <button id="begrepen">Begrepen</button>
       </form>
     </dialog>
@@ -69,7 +71,7 @@
   
 
    <main>
-
+      <!-- MARK: PAGINATITEL-->
       <header>
       <h1>
         Tuintje van<br>
@@ -77,8 +79,14 @@
       </h1>
     </header>
 
-  
+
+
+    <!-- MARK: LINK MUZIEK EN DARK/LIGHT KEUZE -->
   <nav>
+    <a href="./songtekst/letithappen.html" aria-label="songtekst bekijken">
+        <span>♫</span>
+    </a>
+
     <label>
         <input type="radio" name="theme" value="auto-theme" checked>
         🚗 auto
@@ -95,6 +103,9 @@
     </label>
   </nav>
 
+
+
+      <!-- MARK: TIJDLIJN -->
       <section>
         <article>
           <h2>2000</h2>
@@ -290,6 +301,8 @@
 
       </main>
 
+
+    <!-- MARK: FOOTER -->  
     <footer>
       <p>[Copyleft 2026, all wrongs reversed]</p>
     </footer>

@@ -1,4 +1,5 @@
-/* HIER KOMT JOUW CSS */
+
+/* MARK: LETTERTYPE*/
 @font-face {
   font-family: "Racing Sans One";
   src: url("../../../fonts/RacingSansOne-Regular kopie.ttf") format("truetype");
@@ -6,7 +7,7 @@
   font-style: normal;
 }
 
-
+/* MARK: KLEUREN LIGHT/DARK MODE */
 html {
   color-scheme: light dark;
 
@@ -27,6 +28,8 @@ html:has( [value="dark-theme"]:checked ) {
   color-scheme:dark;
 }
 
+
+/* MARK: ALGEMENE VORMGEVING EN ACHTERGROND */
 body {
   
   background-color: var(--background);
@@ -36,10 +39,9 @@ body {
 }
 
 
-/* ACHTERGROND */
+/* MARK: ACHTERGROND */
 body {
   background-color: var(--background);
-
   background-image:
   linear-gradient(
     45deg,
@@ -55,30 +57,37 @@ body {
     transparent 75%,
     var(--pattern) 75%
   );
-  background-size: 5em 5em;
-  background-position:
-  0 0,
-  2.5em 2.5em;
 
+  background-size: 5em 5em;
+  background-position: 0 0, 2.5em 2.5em;
   background-attachment: fixed;
+
+  COLOR: VAR(--color);
+  font-family: "Racing Sans One", sans-serif;
   
 }
 
-/* PAGINA */
+
+
+/* MARK: PAGINA */
 main {
   width: 100%;
-  max-width: 900px;
+  max-width: 56.25rem;
   box-sizing: border-box;
   margin: 0 auto;
   padding: 1.5em clamp(1em, 4vw, 3em) 3em;
 }
 
-/* DARKLIGHT WISSELAAR*/
-
+/* MARK: DARKLIGHT WISSELAAR*/
 nav input {
-  display: none;
+  position: absolute;
+  opacity: 0;
+  width: 0.0625rem;
+  height: 0.0625rem;
 }
 
+/* MARK: NAVIGATIEBALK LIGHT/DARK BOVENAAN */
+/* POSITION FIXED ZODAT DEZE TIJDENS SCROLLEN ZICHTBAAR BLIJVEN*/
 nav {
   position: fixed;
   top: 0;
@@ -87,8 +96,8 @@ nav {
   box-sizing: border-box;
   display: flex;
   justify-content: center;
-  gap: clamp(0.2em, 1.5vw, 2em);
-  padding: 0.7em clamp(0.3em, 2vw, 1.5em);
+  gap: 1em;
+  padding: 0.7em 0.3em 0.7em 3.5rem;
   background-color: var(--background);
   color: var(--color);
   z-index: 1000;
@@ -97,10 +106,10 @@ nav {
     gap: 2em;
     padding: 1em 1.5em;
   }
-
+ 
   label {
     padding: 0.6em 0.7em;
-    font-size: 1em;
+    font-size: em;
     cursor: pointer;
 
     @media (width > 40em) {
@@ -110,10 +119,11 @@ nav {
   }
 }
 
-nav label {
+nav label,
+nav > a {
   padding: clamp(0.4em, 1.5vw, 0.8em);
   font-size: clamp(0.8rem, 2.5vw, 1.5rem);
-  border: 2px solid var(--border);
+  border: 0.125rem solid var(--border);
   border-radius: 0.6em;
   cursor: pointer;
   color: var(--color);
@@ -125,22 +135,62 @@ nav label {
   }
 }
 
-nav label:hover {
+nav > a {
+  position: absolute;
+  left: 0.75rem;
+  top: 50%;
+  transform: translateY(-50%);
+
+  width: 2.5em;
+  height: 2.5em;
+  box-sizing: border-box;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 0;
+  border: 0.125rem solid var(--border);
+  border-radius: 0.6em;
+  background-color: var(--card-background);
+
+  text-decoration: none;
+}
+
+nav > a span {
+  display: block;
+  color: var(--color);
+  font-size: 1.5em;
+  line-height: 1;
+  transform: translateY(0.125rem);
+}
+
+
+nav label:hover,
+nav > a:hover {
   background-color:#676767;
   border-color: #000000;
 }
 
-html:has([value="light-theme"]:checked) nav label:hover {
+nav label:has(input:focus-visible),
+nav > a:focus-visible {
+  outline: 0.1875rem solid #000000;
+  background-color: #676767;
+  outline-offset: 0.1875rem;
+}
+
+html:has([value="light-theme"]:checked) nav label:hover,
+html:has([value="light-theme"]:checked) nav > a:hover {
   background-color: #7d7d7d;
   border-color: #2c2c2c;
 }
 
 nav label:has(input:checked) {
-  border: 2px solid #ff2028
+  border: 0.125rem solid #ff2028
 }
 
 
-/* TITEL */
+/* MARK: TITEL */
 header {
   text-align: center;
   margin-top: 5em;
@@ -157,54 +207,55 @@ header h1 {
   font-size: clamp(2.5rem, 12vw, 7.5rem);
 }
 
-/* BLOKKEN TIJDLIJN */
+/* MARK: BLOKKEN TIJDLIJN */
 section {
   display: grid;
-  grid-template-columns: minmax(0, 1fr);
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
   gap: clamp(1em, 3vw, 1.5em);
   margin: 2em 0;
   padding: clamp(0.7em, 3vw, 1.5em);
   background-color: var(--card-background);
-  border: 4px solid var(--border);
+  border: 0.25rem solid var(--border);
   border-radius: 0.9em;
 
 
   @media (width > 40em) {
-    grid-template-columns: minmax(0, 19fr) minmax(0, 15fr);
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
     align-items: center;
   }
 } 
 
 
-/* JAARTALLEN */
+/* MARK: JAARTALLEN */
 section article h2 {
   margin: 0 0 0.1em;
   color: #ff2028;
   font-family: "Racing Sans One" , sans-serif;
-  font-size: clamp(5rem, 20vw, 7rem);
+  font-size: clamp(3rem, 15vw, 7rem);
   line-height: 0.85;
   font-style: normal;
   font-weight: 400;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.04em;
 }
 
-/* TEKSTEN */
+/* MARK: TEKSTEN */
 section article p {
-  margin: 0.6em 0 0;
+  margin: 0.4em 0 0;
   color: var(--color);
   font-family: "Racing Sans One", sans-serif;
-  font-size: clamp(0.85rem, 2.8vw, 1.2rem);
-  line-height: 1.25;
+  font-size: clamp(1rem, 3vw, 1.4rem);
+  line-height: 1.15;
   font-style: normal;
   font-weight: 400;
 }
 
-/* ENKELE AFBEELDINGEN */
+/* MARK: ENKELE AFBEELDINGEN */
 section > img {
   display: block;
   width: 100%;
-  aspect-ratio: 16/9;
+  aspect-ratio: 4/3;
   object-fit: cover;
+  align-self: center;
   border-radius: 0.8em;
 
   @media (width > 40em) {
@@ -212,95 +263,96 @@ section > img {
   }
 }
 
-/* DUBBELE AFBEELDINGEN */
+/* MARK: DUBBELE AFBEELDINGEN */
 figure {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: clamp(0.4em, 1.5vw, 0.8em);
+  grid-template-columns: 1fr;
+  gap: 1em;
+  margin: 0;
 }
 
 
 figure img {
   display: block;
   width: 100%;
-  aspect-ratio: 1/1;
-  object-fit: cover;
-  border-radius: 0.8em;
+  height: auto;
+  object-fit: contain;
+  border-radius: 2.5em;
 }
   
-/* VOETER */
-
+/* MARK: VOETER */
 footer {
   text-align: center;
   padding: 2em;
   color: var(--color);
 }
 
-/*PRIVACY DIALOG*/
+/* MARK: PRIVACY DIALOG*/
 html:has(dialog:open) {
       overflow-y:clip;
     }
 
 dialog {
-  &::backdrop {
-    backdrop-filter: blur(10px);
-  }
-}
-
-dialog {
   width: 60vw;
+  max-width: 90%;
   height: 75vh;
-
+  overflow-y: auto;
   margin: auto;
-  border: 4px solid var(--border);
+  border: 0.25rem solid var(--border);
   border-radius: 1.8em;
+  background-color: var(--background);
+  color: var(--color);
+
+  &::backdrop {
+    backdrop-filter: blur(0.625rem);
+  }
 }
 
 dialog h3 {
   color: #ff2028;
-  font-size: 80px;
+  font-size: clamp(1.8rem, 6vw, 3.5rem);
   text-transform: uppercase;
   text-align: center;
-  margin-top: 10px;
-  margin-bottom: 15px;
+  margin-top: 0.625em;
+  margin-bottom: 0.625em;
 }
 
 dialog h4 {
-  font-size: 40px;
-  margin-top: 15px;
-  margin-bottom: 0px;
+  font-size: clamp(1.1rem, 6vw, 3.5rem);
+  margin-top: 1em;
+  margin-bottom: 0;
 }
 
 dialog p {
-  margin-top: 2px;
-  margin-bottom: 25px;
-  font-size: 28px;
+  margin-top: 0.125em;
+  margin-bottom: 0.125em;
+  font-size: clamp(1rem, 2.5vw, 1.2rem);
   color: var(--dialog-color)
 }
 
 #begrepen {
   font-family: "Racing Sans One", sans-serif;
-  font-size: 28px;
+  font-size: 1.75em;
   width: 35vw;
   height: 6vw;
-  border: 3px solid var(--border);
+  border: 0.1875rem solid var(--border);
   border-radius: 0.7em;
   display: block;
-  margin: 15px auto;
+  margin: 1em auto;
   cursor: pointer;
 }
 
 #privacy-button {
   position: fixed;
-  right: 12px;
-  bottom: 12px;
-  width: 55px;
-  height: 55px;
+  right: 0.75rem;
+  bottom: 0.75rem;
+  width: 2em;
+  height: 2em;
   border-radius: 50%;
-  border: 3px solid var(--border);
+  border: 0.5rem solid var(--border);
   background-color: light-dark(#f2f2f2, #242424);
   color: light-dark(#000000, #ffffff);
-  font-size: 35px;
+  font-size: 2.25em;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -308,41 +360,41 @@ dialog p {
   z-index: 1000;
 
   @media (width > 40em) {
-    right: 30px;
-    bottom: 30px;
-    width: 90px;
-    height: 90px;
-    font-size: 60px;
+    right: 0.5em;
+    bottom: 0.5em;
+    width: 6rem;
+    height: 6rem;
+    font-size: 3rem;
   }
 }
 
-/* SCROLL PROGRESS */
-
+/* MARK: SCROLL PROGRESS */
+/* GEBRUIKTE BRON=https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Scroll-driven_animations/Timelines*/
 #scroll-progress {
   position: fixed;
   left: clamp(8px, calc(50vw - 470px), 150px);
   top: 55%;
   transform: translateY(-50%);
-  width: 10px;
+  width: 0.625rem;
   height: 60vh;
   background-color: var(--card-background);
-  border: 3px solid var(--border);
-  border-radius: 20px;
+  border: 0.1875em solid var(--border);
+  border-radius: 1.25em;
   z-index: 900;
 
   @media (width > 40em) {
-    width: 18px;
+    width: 1.125rem;
     height: 75vh;
   }
 }
 
 #scroll-car {
   position: absolute;
-  top: -30px;
+  top: -0.75em;
   left: 50%;
   z-index: 2;
   left: 50%;
-  font-size: 35px;
+  font-size: 2em;
   transform: translateX(-50%);
   animation-name: drive;
   animation-duration: 1ms;
@@ -350,7 +402,7 @@ dialog p {
   animation-timeline: scroll(root block);
 
   @media (width > 40em) {
-    font-size: 75px;
+    font-size: 4em;
   }
 }
 
@@ -358,22 +410,22 @@ dialog p {
   position: absolute;
   z-index: 1;
   left: 50%;
-  bottom: -35px;
-  font-size: 35px;
+  bottom: -0.75em;
+  font-size: 2em;
   transform: translateX(-50%);
 
   @media (width > 40em) {
-    bottom: -55px;
-    font-size: 65px;
+    bottom: -0.75em;
+    font-size: 4em;
   }
 }
 
 @keyframes drive {
   from {
-    top: -30px;
+    top: -0.75em;
   }
 
   to {
-    top: calc(100% - 35px);
+    top: calc(100% - 0.75em);
   }
 }
