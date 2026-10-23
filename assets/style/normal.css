@@ -376,7 +376,8 @@ dialog p {
 }
 
 /* MARK: SCROLL PROGRESS */
-/* GEBRUIKTE BRON=https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Scroll-driven_animations/Timelines*/
+/* GEBRUIKTE BRON=https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Scroll-driven_animations/Timelines*/ 
+/* CODE AAN DE HAND VAN EXTERNE BRON DUS WEET NIET VAN ALLES WAT HET PRECIES DOET */
 #scroll-progress {
   position: fixed;
   left: clamp(8px, calc(50vw - 470px), 150px);
@@ -406,7 +407,7 @@ dialog p {
   animation-name: drive;
   animation-duration: 1ms;
   animation-timing-function: linear;
-  animation-timeline: scroll(root block);
+  animation-timeline: scroll;
 
   @media (width > 40em) {
     font-size: 4em;
