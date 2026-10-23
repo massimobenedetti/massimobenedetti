@@ -4,18 +4,6 @@
   src: url('font/SeraphsVF.woff2') format('woff2') /* Modern Browsers */
 }
 
-/* MARK: KLEUREN */
-:root {
-  --background: #101016;
-  --text: #f2f0f7;
-  --muted: #aaa5b9;
-  --purple: #b7a0ff;
-  --pink: #ff658a;
-  --cyan: #8de8df;
-  --orange: #ffb36b;
-}
-
-
 
 /* MARK: ALGEMEEN */
 * {
@@ -32,11 +20,11 @@ body {
   background:
     radial-gradient(
       circle at 80% 15%,
-      rgba(130, 90, 210, 0.15),
+      rgba(51, 51, 224, 0.333),
       transparent 35rem
     ),
-    var(--background);
-  color: var(--text);
+    rgb(12, 12, 48);
+  color: rgb(177, 195, 209);
   font-family: "Seraphs", serif;
   overflow-x: hidden;
 }
@@ -66,8 +54,8 @@ header {
   line-height: 0.85;
   text-transform: uppercase;
   text-shadow: 
-    0.035em 0.035em 0 var(--purple),
-    0 0 2rem rgba(183, 160, 255, 0.2);
+    0.035em 0.035em 0 rgb(0, 170, 255),
+    0 0 2rem rgb(62, 62, 62);
 }
 
 
@@ -95,12 +83,12 @@ main {
 
 .intro strong {
   display: inline-block;
-  color: var(--purple);
+  color: rgb(84, 84, 254);
   font-size: 1.5em;
   line-height: 0.85;
   letter-spacing: -0.06em;
   text-shadow: 
-    0.04em 0.05em 0 var(--pink),
+    0.04em 0.05em 0 rgb(90, 211, 133),
     0 0 1.5rem rgba(183, 160, 255, 0.2);
   animation: noise 2s steps(2, end) infinite;
 }
@@ -168,14 +156,14 @@ main {
 .voice strong {
   display: inline-block;
   text-transform: uppercase;
-  color: var(--pink);
+  color: rgb(242, 89, 89);
   font-family: Arial, sans-serif;
   font-size: 1.5em;
   font-weight: 900;
   letter-spacing: -0.08em;
   text-shadow: 
-    0.05em 0.04em 0 #761e42,
-    0 0 1.5rem rgba(255, 101, 138, 0.4);
+    0.05em 0.04em 0 #9e0042,
+    0 0 1.5rem rgba(107, 45, 59, 0.4);
   animation: loud 0.2s steps(2,end) infinite alternate;
 }
 
@@ -190,7 +178,7 @@ h1 {
   font-style: italic;
   text-transform: uppercase;
   letter-spacing: -0.08em;
-  text-shadow: 0.035em 0.04em 0 var(--purple);
+  text-shadow: 0.035em 0.04em 0 green;
   animation: happen 4s ease-in-out infinite alternate;
 }
 
@@ -203,8 +191,7 @@ h2 {
   font-style: italic;
   text-transform: uppercase;
   letter-spacing: -0.06em;
-  color: var(--cyan);
-  text-shadow: 0.04em 0.04em 0 #246c70;
+  text-shadow: 0.04em 0.04em 0 rgb(83, 160, 191);
   transform: rotate(2deg);
 }
 
@@ -214,9 +201,9 @@ h2 {
   align-self: end;
   font-size: clamp(1.2rem, 1.3vw, 1.2rem);
   margin-top: -5rem;
-  color: var(--muted);
+  color:rgb(113, 124, 155);
   font-family: Arial, sans-serif;
-  letter-spacing: 0.04em;
+  letter-spacing: 0.09em;
 }
 
 
@@ -232,12 +219,12 @@ h2 {
 
 .running strong {
   display: inline-block;
-  color: var(--orange);
+  color: rgb(77, 186, 223);
   font-family: Arial, sans-serif;
   font-size: 1.3em;
   font-weight: 900;
   letter-spacing: -0.08em;
-  text-shadow: 0.04em 0.04em 0 #7e3f16;
+  text-shadow: 0.04em 0.04em 0 #4561ff;
   animation: speed 0.65 ease-in-out infinite alternate;
 }
 
@@ -248,7 +235,7 @@ h2 {
 }
 
 .orbit-running .orbit-center {
-  color: var(--orange);
+  color: orange;
   font-size: 0.5em;
   font-weight: 900;
   font-family: Arial, sans-serif;
@@ -256,7 +243,7 @@ h2 {
 }
 
 .orbit-running .orbit-word {
-  color: var(--cyan);
+  color: rgb(89, 181, 211);
   font-size: 0.36em;
   animation-duration: 2.5s;
 }
@@ -279,23 +266,22 @@ h2 {
 }
 
 .shadow em {
-  color: var(--purple);
+  color: rgb(96, 97, 158);
   font-size: 1.15em;
   text-decoration: line-through;
-  text-decoration-color: var(--pink);
-  text-decoration-thickness: 0.07em;
+  text-decoration-thickness: 0.09em;
 }
 
 .shadow strong {
   display: inline-block;
   margin-left: 15%;
-  color: var(--pink);
+  color: rgb(241, 150, 38);
   font-size: 1.6em;
   letter-spacing: -0.08em;
   line-height: 0.85;
   text-shadow: 
-    0.05em 0.05em 0 #63233c,
-    0 0 1.5rem rgba(255, 101, 138, 0.25);
+    0.05em 0.05em 0 #634523,
+    0 0 1.5rem rgba(255, 173, 101, 0.25);
   animation: shadow 3s ease-in-out infinite alternate;
 } 
 
@@ -311,10 +297,10 @@ h2 {
 
 .growing strong {
   display: inline-block;
-  color: var(--cyan);
+  color: lightblue;
   font-size: 1.5em;
   letter-spacing: -0.06em;
-  text-shadow: 0.04em 0.04em 0 #286f70;
+  text-shadow: 0.04em 0.04em 0 #344ab7;
   animation: growing 3s ease-in-out infinite alternate;
 }
 
@@ -333,8 +319,8 @@ h2 {
   display: inline-block;
   font-size: 1.6em;
   letter-spacing: -0.08em;
-  color: var(--purple);
-  text-shadow: 0.05em 0.05em 0 var(--pink);
+  color: rgb(80, 80, 225);
+  text-shadow: 0.05em 0.05em 0 rgb(107, 123, 123);
   animation: shallow 4s ease-in-out infinite alternate;
 }
 
