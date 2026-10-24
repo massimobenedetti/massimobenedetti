@@ -14,7 +14,7 @@ html {
   --background: light-dark(#f2f2f2, #242424);
   --card-background: light-dark(#d9d9d9, #303030);
   --color: light-dark(#000000, #ffffff);
-  --dialog-color: light-dark(#4f4f4f, #a9a9a9);
+  --dialog-color: light-dark(#4f4f4f, #cfcfcf);
   --border: light-dark(#555555, #a9a9a9);
   --pattern: light-dark(#dddddd, #2d2d2d);
   --accent: #ff2028;
@@ -300,9 +300,11 @@ html:has(dialog:open) {
     }
 
 dialog {
+  font-family: Arial, sans-serif;
   width: 60vw;
-  max-width: 90%;
-  height: 75vh;
+  max-width: 55%;
+  height: auto;
+  max-height: 80%;
   overflow-y: auto;
   margin: auto;
   border: 0.25rem solid var(--border);
@@ -316,21 +318,25 @@ dialog {
 }
 
 dialog h3 {
-  color: #ff2028;
-  font-size: clamp(1.8rem, 6vw, 3.5rem);
+  max-width: 95%;
+  font-family: "Racing Sans One", sans-serif;
+  color: var(--color);
+  font-size: clamp(1.8rem, 6vw, 3.8rem);
   text-transform: uppercase;
   text-align: center;
-  margin-top: 0.625em;
+  margin-top: 0.35em;
   margin-bottom: 0.625em;
 }
 
 dialog h4 {
-  font-size: clamp(1.1rem, 6vw, 3.5rem);
+  max-width: 95%;
+  font-size: clamp(1rem, 3.5vw, 2rem);
   margin-top: 1em;
   margin-bottom: 0;
 }
 
 dialog p {
+  max-width: 90%;
   margin-top: 0.125em;
   margin-bottom: 0.125em;
   font-size: clamp(1rem, 2.5vw, 1.2rem);
@@ -349,6 +355,42 @@ dialog p {
   cursor: pointer;
 }
 
+/* MARK: PRIVACY MOBIEL */
+@media (width <= 40em) {
+  dialog {
+    width: 90vw;
+    max-width: 70%;
+    height: auto;
+    max-height: 75%;
+    padding: 0.8em;
+    border-radius: 1em;
+  }
+
+  dialog h3 {
+    font-size: 2rem;
+    margin-bottom: 0.5em;
+  }
+
+  dialog h4 {
+    font-size: 1.35rem;
+    margin-top: 0.7em;
+  }
+
+  dialog p {
+    font-size: 1.1rem;
+    line-height: 1.2;
+  }
+
+  #begrepen {
+    width: 70%;
+    height: auto;
+    padding: 0.2em;
+    font-size: 1.7rem;
+  }
+}
+
+
+/* MARK: PRIVACY BUTTON */
 #privacy-button {
   position: fixed;
   right: 0.75rem;
