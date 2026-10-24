@@ -17,20 +17,16 @@ html {
 body {
   margin: 0;
   padding: 0 5vw;
-  background:
+  background: /* GEMAAKT MET BEHULP VAN https://www.w3schools.com/css/css3_gradients_radial.asp */
     radial-gradient(
-      circle at 80% 15%,
-      rgba(51, 51, 224, 0.333),
-      transparent 35rem
+      circle at 80% 15%, /* MIDDELPUNT OP 80% VAN DE BREEDTE EN 15% VAN DE HOOGTE VAN HET GEBIED */
+      #3333e055,
+      transparent 35rem /* VERLOOP VAN TRANSPARANT VERVAGEN TOT AFSTAND VAN 35rem */
     ),
-    rgb(12, 12, 48);
-  color: rgb(177, 195, 209);
+    #0c0c30;
+  background-attachment: fixed;
+  color: #b1c3d1;
   font-family: "Seraphs", serif;
-  overflow-x: hidden;
-}
-
-p {
-  margin: 0;
 }
 
 strong {

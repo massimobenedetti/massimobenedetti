@@ -8,6 +8,7 @@
 }
 
 /* MARK: KLEUREN LIGHT/DARK MODE */
+/* GEMAAKT MET BEHULP VAN DEEP-DIVE LIGHT DARK THEME */
 html {
   color-scheme: light dark;
 
@@ -40,31 +41,13 @@ body {
 
 
 /* MARK: ACHTERGROND */
+/* GEBRUIK GEMAAKT VAN DEEP-DIVE VLAGGEN&CO EN https://www.w3schools.com/css/css3_gradients.asp VOOR EXTRA UITLEG */
 body {
   background-color: var(--background);
-  background-image:
-  linear-gradient(
-    45deg,
-    var(--pattern) 25%,
-    transparent 25%,
-    transparent 75%,
-    var(--pattern) 75%
-  ),
-  linear-gradient(
-    45deg,
-    var(--pattern) 25%,
-    transparent 25%,
-    transparent 75%,
-    var(--pattern) 75%
-  );
-
+  background-image: repeating-conic-gradient(var(--pattern) 0% 25%, transparent 0% 50% );
+  /* PERCENTAGES GEVEN AAN OP WELKE POSITIE BINNEN HET KLEURVERLOOP EEN KLEUR BEGINT EN EINDIGT */
   background-size: 5em 5em;
-  background-position: 0 0, 2.5em 2.5em;
   background-attachment: fixed;
-
-  COLOR: VAR(--color);
-  font-family: "Racing Sans One", sans-serif;
-  
 }
 
 
@@ -87,7 +70,6 @@ nav input {
 }
 
 /* MARK: NAVIGATIEBALK LIGHT/DARK BOVENAAN */
-/* POSITION FIXED ZODAT DEZE TIJDENS SCROLLEN ZICHTBAAR BLIJVEN*/
 nav {
   position: fixed;
   top: 0;
@@ -105,17 +87,6 @@ nav {
   @media (width > 40em) {
     gap: 2em;
     padding: 1em 1.5em;
-  }
- 
-  label {
-    padding: 0.6em 0.7em;
-    font-size: em;
-    cursor: pointer;
-
-    @media (width > 40em) {
-      padding: 0.8em 1.5em;
-      font-size: 1.5em;
-    }
   }
 }
 
@@ -135,6 +106,7 @@ nav > a {
   }
 }
 
+/* MARK: NAVIGATIE NAAR SONGTEKST */
 nav > a {
   position: absolute;
   left: 0.75rem;
@@ -150,19 +122,12 @@ nav > a {
   justify-content: center;
 
   padding: 0;
-  border: 0.125rem solid var(--border);
-  border-radius: 0.6em;
-  background-color: var(--card-background);
-
   text-decoration: none;
 }
 
 nav > a span {
-  display: block;
   color: var(--color);
   font-size: 1.5em;
-  line-height: 1;
-  transform: translateY(0.125rem);
 }
 
 
@@ -199,29 +164,26 @@ header {
 }
 
 header h1 {
-  margin: 0;
   color: var(--color);
   font-family: "Racing Sans One", sans-serif;
   line-height: 0.95;
-  font-style: normal;
   font-size: clamp(2.5rem, 12vw, 7.5rem);
 }
 
 /* MARK: BLOKKEN TIJDLIJN */
 section {
   display: grid;
-  grid-template-columns: minmax(0, 1fr);
+  grid-template-columns: 1fr;
   gap: clamp(1em, 3vw, 1.5em);
-  margin: 2em 0;
   padding: clamp(0.7em, 3vw, 1.5em);
+  margin: 2em 0;
   background-color: var(--card-background);
   border: 0.25rem solid var(--border);
   border-radius: 0.9em;
 
 
   @media (width > 40em) {
-    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
-    align-items: center;
+    grid-template-columns: 1fr 1fr;
   }
 } 
 
@@ -234,30 +196,25 @@ section article h2 {
   font-family: "Racing Sans One" , sans-serif;
   font-size: clamp(2rem, 15vw, 7rem);
   line-height: 0.85;
-  font-style: normal;
-  font-weight: 400;
   letter-spacing: 0.04em;
 }
 
 /* MARK: TEKSTEN */
 section article p {
-  margin: 0.4em 0 0;
   color: var(--color);
   font-family: "Racing Sans One", sans-serif;
   font-size: clamp(2rem, 3vw, 1.4rem);
   line-height: 1.15;
-  font-style: normal;
   font-weight: 400;
 }
 
 /* MARK: ENKELE AFBEELDINGEN */
 section > img {
-  display: block;
   width: 100%;
   aspect-ratio: 4/3;
-  object-fit: cover;
+  object-fit: cover; /* AFBEELDING VULT VOLLEDIGE BESCHIKBARE AFBEELDINGSRUIMTE */
   align-self: center;
-  border-radius: 0.8em;
+  border-radius: 1em;
 
   @media (width > 40em) {
     aspect-ratio: 1/1;
@@ -282,7 +239,7 @@ figure img {
   display: block;
   width: 100%;
   height: auto;
-  object-fit: contain;
+  align-self: center;
   border-radius: 2.5em;
 }
   
@@ -296,24 +253,20 @@ footer {
 /* MARK: PRIVACY DIALOG*/
 /* GEMAAKT AAN DE HAND VAN DEEP DIVE DIALOGS VAN SANNE */
 html:has(dialog:open) {
-      overflow-y:clip;
+      overflow-y:clip; /* VOORKOMT DAT DE PAGINA VERTICAAL BUITEN HET ZICHTBARE GEBIED KAN SCROLLEN WANNEER DIALOG OPEN IS */
     }
 
 dialog {
   font-family: Arial, sans-serif;
-  width: 60vw;
   max-width: 55%;
-  height: auto;
-  max-height: 80%;
-  overflow-y: auto;
-  margin: auto;
+  max-height: 90%;
   border: 0.25rem solid var(--border);
   border-radius: 1.8em;
   background-color: var(--background);
   color: var(--color);
 
   &::backdrop {
-    backdrop-filter: blur(0.625rem);
+    backdrop-filter: blur(0.8rem);
   }
 }
 
@@ -348,7 +301,7 @@ dialog p {
   font-size: 1.75em;
   width: 35vw;
   height: 6vw;
-  border: 0.1875rem solid var(--border);
+  border: 0.18rem solid var(--border);
   border-radius: 0.7em;
   display: block;
   margin: 1em auto;
@@ -358,11 +311,8 @@ dialog p {
 /* MARK: PRIVACY MOBIEL */
 @media (width <= 40em) {
   dialog {
-    width: 90vw;
     max-width: 70%;
-    height: auto;
     max-height: 75%;
-    padding: 0.8em;
     border-radius: 1em;
   }
 
@@ -382,7 +332,6 @@ dialog p {
   }
 
   #begrepen {
-    width: 70%;
     height: auto;
     padding: 0.2em;
     font-size: 1.7rem;
@@ -422,9 +371,8 @@ dialog p {
 /* CODE AAN DE HAND VAN EXTERNE BRON DUS WEET NIET VAN ALLES WAT HET PRECIES DOET */
 #scroll-progress {
   position: fixed;
-  left: clamp(8px, calc(50vw - 470px), 150px);
-  top: 55%;
-  transform: translateY(-50%);
+  left: clamp(0.5rem, calc(50vw - 29.5rem), 9.4rem);  /* clamp(minimum, bereken(50% venster - 29.5rem), maximum */
+  top: 18%;
   width: 0.625rem;
   height: 60vh;
   background-color: var(--card-background);
@@ -443,13 +391,11 @@ dialog p {
   top: -0.75em;
   left: 50%;
   z-index: 2;
-  left: 50%;
   font-size: 2em;
-  transform: translateX(-50%);
+  transform: translateX(-50%); /* TERUGSCHUIVEN MET 50% VAN EIGEN BREEDTE */
   animation-name: drive;
-  animation-duration: 1ms;
-  animation-timing-function: linear;
-  animation-timeline: scroll;
+  animation-timing-function: linear; /* LAAT ANIMATIE GElIJKMATIG VERLOPEN */
+  animation-timeline: scroll(root block); /* KOPPELT ANIMATIE AAN SCROLLVOORTGANG */
 
   @media (width > 40em) {
     font-size: 4em;
@@ -462,20 +408,14 @@ dialog p {
   left: 50%;
   bottom: -0.75em;
   font-size: 2em;
-  transform: translateX(-50%);
+  transform: translateX(-50%); /* TERUGSCHUIVEN MET 50% VAN EIGEN BREEDTE */
 
   @media (width > 40em) {
-    bottom: -0.75em;
     font-size: 4em;
   }
 }
 
 @keyframes drive {
-  from {
-    top: -0.75em;
-  }
-
-  to {
-    top: calc(100% - 0.75em);
-  }
+  from { top: -0.75em; }
+  to { top: calc(100% - 0.75em); }
 }
