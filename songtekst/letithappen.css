@@ -49,26 +49,21 @@ header {
   font-size: clamp(3rem, 12vw, 11rem);
   line-height: 0.85;
   text-transform: uppercase;
-  text-shadow: 
-    0.035em 0.035em 0 rgb(0, 170, 255),
-    0 0 2rem rgb(62, 62, 62);
+  text-shadow: 0.035em 0.035em 0 rgb(0, 170, 255);
 }
 
 
 /* MARK: GRID */
 main {
   display: grid;
-  grid-template-columns: repeat(12, minmax(0, 1fr));
-  grid-template-rows: auto;
+  grid-template-columns: repeat(12, 1fr);
   row-gap: clamp(9rem, 20vw, 18rem);
   align-items: center;
   max-width: 90rem;
-  margin: 0 auto;
-  padding: 3rem 0 12rem;
 }
 
-
-/* MARK: INTRO-NOISE */
+/* MARK : REGEL 1
+/* IT'S ALWAYS AROUND ME , ALL THIS */
 .intro {
   grid-column: 1/11;
   grid-row: 1;
@@ -77,6 +72,7 @@ main {
   letter-spacing: -0.04em;
 }
 
+/* NOISE */
 .intro strong {
   display: inline-block;
   color: rgb(84, 84, 254);
@@ -89,59 +85,43 @@ main {
   animation: noise 2s steps(2, end) infinite;
 }
 
-
-/* CIRKELANIMATIE */
+/* CIRKELANIMATIE GEMAAKT MET BEHULP VAN https://codepen.io/alandunning/pen/bNNRvQ */
+/* CIRKELANIMATIE POSITIONEREN */
 .orbit-group {
-  display: inline-block;
-  position: relative;
+  display: inline-block; /* ZODAT JE BREEDTE EN HOOGTE KAN INSTELLEN OP DEZELFDE TEKSTREGEL */
+  position: relative; /* MAAKT DIT HET REFERENTIEPUNT VAN ABSOLUTE */
   vertical-align: middle;
   width: 3.5em;
   height: 2.5em;
-  margin: 0 0.1em;
 }
 
+/* ME */
 .orbit-center {
-  position: absolute;
+  position: absolute; /* MAAKT HET ONAFHANKELIJK POSITIONEERBAAR */
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: 2;
-  white-space: nowrap;
 }
 
+/* AROUND VORMGEVING */
 .orbit-word {
-  position: absolute;
+  position: absolute; /* MAAKT HET ONAFHANKELIJK POSITIONEERBAAR */
   top: 50%;
   left: 50%;
-  color: var(--cyan);
+  color: #59bfe1;
   font-family: Arial, sans-serif;
   font-size: 0.4em;
   font-weight: 900;
   letter-spacing: 0.04em;
   text-transform: uppercase;
-  white-space: nowrap;
-  transform-origin: 0 0;
-  animation: orbit 4s linear infinite;
-}
-
-.orbit-me {
-  width: 3.8em;
-  height: 2.8em;
-}
-
-.orbit-me .orbit-center {
-  color: var(--pink);
-  font-size: 0.95em;
-  text-shadow: 0 0 1rem rgba(255, 101, 138, 0.4);
-}
-
-.orbit-me .orbit-word {
-  animation-duration: 5s;
+  transform-origin: 0 0; /* BEPAALT DRAAIPUNT VAN ANIMATIE OP LINKERBOVENKANT VAN ELEMENT */
+  animation: orbit 4s linear infinite; 
 }
 
 
-
-/* MARK: VOICE-LOUD */
+/* MARK: REGEL 2 */
+/* BUT NOT NEARLY AS ... AS THE VOICE SAYING */
 .voice {
   grid-column: 4/13;
   grid-row: 2;
@@ -149,8 +129,9 @@ main {
   line-height: 1.1;
 }
 
+/* LOUD */
 .voice strong {
-  display: inline-block;
+  display: inline-block; /* MAAKT HET TE ANIMEREN EN VORM TE GEVEN TERWIJL HET OP DEZELFDE TEKSTREGEL BLIJFT STAAN */
   text-transform: uppercase;
   color: rgb(242, 89, 89);
   font-family: Arial, sans-serif;
@@ -160,28 +141,27 @@ main {
   text-shadow: 
     0.05em 0.04em 0 #9e0042,
     0 0 1.5rem rgba(107, 45, 59, 0.4);
-  animation: loud 0.2s steps(2,end) infinite alternate;
+  animation: loud 0.2s steps(2,end) infinite alternate; /* ALTERNATE ZORGT ERVOOR DAT DE RICHTING BIJ IEDERE BEWEGINGSCYCLUS VERANDERT */
 }
 
 
-/* MARK: LET IT HAPPEN */
+/* MARK: LET IT HAPPEN, LET IT HAPPEN 1 */
 h1 {
   grid-column: 1/13;
   grid-row: 3;
-  margin: 0;
   font-size: clamp(3rem, 9vw, 9rem);
   line-height: 0.85;
   font-style: italic;
   text-transform: uppercase;
   letter-spacing: -0.08em;
   text-shadow: 0.035em 0.04em 0 green;
-  animation: happen 4s ease-in-out infinite alternate;
+  animation: happen 4s ease-in-out infinite alternate; /* ALTERNATE ZORGT ERVOOR DAT DE RICHTING BIJ IEDERE BEWEGINGSCYCLUS VERANDERT */
 }
 
+/* MARK : LET IT HAPPEN, LET IT HAPPEN 2 */
 h2 {
   grid-column: 2/13;
   grid-row: 4;
-  margin: 0;
   font-size: clamp(2.5rem, 7vw, 7rem);
   line-height: 0.9;
   font-style: italic;
@@ -191,12 +171,12 @@ h2 {
   transform: rotate(2deg);
 }
 
+/* MARK : IT'S GONNA FEEL SO GOOD */
 .aside {
   grid-column: 9/13;
   grid-row: 3;
   align-self: end;
   font-size: clamp(1.2rem, 1.3vw, 1.2rem);
-  margin-top: -5rem;
   color:rgb(113, 124, 155);
   font-family: Arial, sans-serif;
   letter-spacing: 0.09em;
@@ -204,54 +184,45 @@ h2 {
 
 
 
-/* MARK: RUNNING */
+/* MARK: ALL THIS RUNNING AROUND */
+/* ALL THIS */
 .running {
   grid-column: 1/9;
   grid-row: 5;
   font-size: clamp(2rem, 5vw, 4.8rem);
   line-height: 1;
-  letter-spacing: -0.05em;
+  letter-spacing: -0.05em
 }
 
+/* RUNNING */
 .running strong {
-  display: inline-block;
   color: rgb(77, 186, 223);
   font-family: Arial, sans-serif;
   font-size: 1.3em;
   font-weight: 900;
   letter-spacing: -0.08em;
   text-shadow: 0.04em 0.04em 0 #4561ff;
-  animation: speed 0.65 ease-in-out infinite alternate;
 }
 
-.orbit-running {
-  width: 3.5em;
-  height: 3em;
-  margin-left: 0.1em;
-}
-
+/* CIRKELANIMATIE GEMAAKT MET BEHULP VAN https://codepen.io/alandunning/pen/bNNRvQ */
+/* OPMAAK MIDDELSTE AROUND */
 .orbit-running .orbit-center {
-  color: orange;
   font-size: 0.5em;
   font-weight: 900;
   font-family: Arial, sans-serif;
   text-shadow: 0.04em 0.04em 0 #7e3f16;
 }
 
+/* RONDDRAAIENDE AROUND */
 .orbit-running .orbit-word {
   color: rgb(89, 181, 211);
   font-size: 0.36em;
   animation-duration: 2.5s;
 }
 
-.running-second {
-  grid-column: 3/11;
-  grid-row: 9;
-  transform: skewX(-5deg);
-}
 
-
-/* MARK: SHADOW */
+/* MARK: TRYING TO COVER MY SHADOW */
+/* TRYING TO ... MY ... */
 .shadow {
   grid-column: 2/11;
   grid-row: 6;
@@ -261,29 +232,32 @@ h2 {
   transform: rotate(-2deg);
 }
 
+/* COVER */
 .shadow em {
-  color: rgb(96, 97, 158);
+  color: #60619e;
   font-size: 1.15em;
   text-decoration: line-through;
   text-decoration-thickness: 0.09em;
 }
 
+/* SHADOW */
 .shadow strong {
-  display: inline-block;
+  display: inline-block; /* MAAKT HET TE ANIMEREN EN VORM TE GEVEN TERWIJL HET OP DEZELFDE TEKSTREGEL BLIJFT STAAN */
   margin-left: 15%;
-  color: rgb(241, 150, 38);
+  color: #f19626;
   font-size: 1.6em;
   letter-spacing: -0.08em;
   line-height: 0.85;
   text-shadow: 
     0.05em 0.05em 0 #634523,
     0 0 1.5rem rgba(255, 173, 101, 0.25);
-  animation: shadow 3s ease-in-out infinite alternate;
+  animation: shadow 3s ease-in-out infinite alternate; /* ALTERNATE ZORGT ERVOOR DAT DE RICHTING BIJ IEDERE BEWEGINGSCYCLUS VERANDERT */
 } 
 
 
 
-/* MARK: GROWING */
+/* MARK: A NOTION GROWING INSIDE */
+/* A NOTION ... INSIDE */
 .growing {
   grid-column: 1/10;
   grid-row: 7;
@@ -291,18 +265,20 @@ h2 {
   line-height: 1.1;
 }
 
+/* GROWING */
 .growing strong {
-  display: inline-block;
+  display: inline-block; /* MAAKT HET TE ANIMEREN EN VORM TE GEVEN TERWIJL HET OP DEZELFDE TEKSTREGEL BLIJFT STAAN */
   color: lightblue;
   font-size: 1.5em;
   letter-spacing: -0.06em;
   text-shadow: 0.04em 0.04em 0 #344ab7;
-  animation: growing 3s ease-in-out infinite alternate;
+  animation: growing 3s ease-in-out infinite alternate; /* ALTERNATE ZORGT ERVOOR DAT DE RICHTING BIJ IEDERE BEWEGINGSCYCLUS VERANDERT */
 }
 
 
 
-/* MARK: SHALLOW */
+/* MARK: NOW ALL THE OTHERS SEEM SHALLOW */
+/* NOW ALL THE OTHERS SEEM ... */
 .shallow {
   grid-column: 4/13;
   grid-row: 8;
@@ -311,19 +287,22 @@ h2 {
   text-align: right;
 }
 
+/* SHALLOW */
 .shallow em {
   display: inline-block;
   font-size: 1.6em;
   letter-spacing: -0.08em;
   color: rgb(80, 80, 225);
   text-shadow: 0.05em 0.05em 0 rgb(107, 123, 123);
-  animation: shallow 4s ease-in-out infinite alternate;
+  animation: shallow 4s ease-in-out infinite alternate; /* ALTERNATE ZORGT ERVOOR DAT DE RICHTING BIJ IEDERE BEWEGINGSCYCLUS VERANDERT */
 }
 
 
 
 
 /* MARK: ANIMATIES */
+/* DIT HEBBEN WIJ GELEERD MET DE DEEPDIVE ANIMATIES 101 VAN SANNE */
+/* ANIMATIE NOISE */
 @keyframes noise {
   0%, 100% {
     transform: translate(0, 0) rotate(0);
@@ -342,7 +321,7 @@ h2 {
   }
 } 
 
-
+/* ANIMATIE LOUD */
 @keyframes loud {
   from{
     transform: translateX(-3px) rotate(-3deg) scale(1);
@@ -353,7 +332,7 @@ h2 {
   }
 }
 
-
+/* ANIMATIE LET IT HAPPEN 1 */
 @keyframes happen {
   from {
     transform: rotate(-2deg) scale(1);
@@ -364,10 +343,10 @@ h2 {
   }
 }
 
-
+/* CIRKELANIMATIE GEMAAKT MET BEHULP VAN https://codepen.io/alandunning/pen/bNNRvQ */
 @keyframes orbit {
   from {
-    transform: rotate(0deg) translateX(1.2em);
+    transform: rotate(0deg) translateX(1.2em); /* TRANSLATE X VERPLAATST HET WOORD 1.2em VANAF HET DRAAIPUNT */
   }
 
   to {
@@ -376,19 +355,7 @@ h2 {
 }
 
 
-@keyframes speed {
-  from {
-    transform: translateX(-0.05em) skewX(-5deg);
-    letter-spacing: -0.08em;
-  }
-
-  to {
-    transform: translateX(0.15em) skewX(-15deg);
-    letter-spacing: -0.02em;
-  }
-}
-
-
+/* ANIMATIE SHADOW */
 @keyframes shadow {
   from {
     transform: translateX(0) skewX(0);
@@ -399,7 +366,7 @@ h2 {
   }
 }
 
-
+/* ANIMATIE GROWING */
 @keyframes growing {
   from {
     transform: scale(0.9);
@@ -412,7 +379,7 @@ h2 {
   }
 }
 
-
+/* ANIMATIE SHALLOW */
 @keyframes shallow {
   from {
     opacity: 0.45;
