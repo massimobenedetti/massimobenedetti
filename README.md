@@ -119,68 +119,18 @@ Doordat ik over een eigen interesse vertel aan de hand van veel eigen beelden en
 3. Voor mijn eigen website richt ik me vooral op 'Contrast & Dynamiek' door grote teksten, rode accenten en opvallende afbeeldingen toe te passen en deze te koppelen aan een duidelijke structuur. Ik vind dit zelf namelijk passen bij de energie die autosport uitstraalt.
 
 ### 14 sept - Sprint 1 - Ma: WS4 + Bi-weekly geek 1
+Bi-weekly geek 1
 
+<img
+src="images/bi-weekly-geek-1-deelvragen.PNG"/>
+
+<img
+src="images/bi-weekly-geek-1-onderzoeksmethoden.PNG">
+
+Check-out
 1. Een website kan snel lelijk worden doordat deze niet 'responsive' is. Hiermee wordt bedoeld dat een website niet voorbereid is op verschillende schermgroottes. Als je de website dan opent op een kleiner formaat zoals een telefoon, verspringen er meestal allerlei teksten en afbeeldingen. Dit kan door een simpele regel in code, die we gekregen hebben van Vasilis en bij de tweede vraag benoemd staat, wel responsive gemaakt worden.
 
 2. Van Vasilis hebben we een voorbeeldregel gekregen om onze website responsive te maken. Deze heb ik vervolgens aangepast naar de code voor mijn eigen website. Hiermee geef je aan dat als een schermbreedte kleiner wordt dan een aangegeven waarde, dat er een andere vormgeving wordt toegepast.;
-
-/_ LAYOUT LAPTOP FORMAAT _/
-@media (width > 40em) {
-.timeline-item {
-grid-template-columns: 19fr 15fr;
-align-items: center;
-}
-
-/_ MOBIEL FORMAAT _/
-
-@media (width <= 40em) {
-.page{
-width: 100%;
-padding: 1.2em 1em 2em;
-}
-
-.intro {
-margin-bottom: 2.5em;
-}
-
-.intro h1 {
-font-size: 12vw;
-}
-
-.timeline-item {
-grid-template-columns: 1fr;
-gap: 1em;
-margin-bottom: 2em;
-padding: 0.7em 0.7em 1em;
-border-radius: 0.8em;
-}
-
-.text h2 {
-font-size: 13vw;
-letter-spacing: 0.04em;
-}
-
-.text p {
-font-size: 3.2vw;
-line-height: 1.3;
-}
-
-.timeline-item > img {
-width: 100%;
-aspect-ratio: 16/9;
-border-radius: 0.7em;
-}
-
-.images {
-grid-template-columns: 1fr 1fr;
-gap: 0.5em;
-}
-
-.images img {
-aspect-ratio: 1/1;
-border-radius: 0.7em;
-}
-}
 
 3. Mijn Garden gebruikt een constante stijl (vormen en lettertype) en een overzichtelijke layout. Ook heb ik de website responsive gemaakt voor meerdere schermen.
 
@@ -197,12 +147,27 @@ Het idee wat ik voor mijn website heb heeft volgens Justus zeker potentie, ik mo
 
 3. Om tot een idee te komen hoe ik mijn tuintje wil opbouwen heb ik een crazy8 opgesteld. Van deze ideeën sprak mij het concept van een tijdlijn het meest aan. Aan de hand van deze tijdlijn, die ik ga opbouwen uit eigen beelden, wil ik overbrengen hoe ik een passie voor autosport heb ontwikkeld.
 
-### 8 sept - Deepdive Light&Dark theme
-
-Na het volgen van de deep-dive over de light en dark mode heb ik dit toe kunnen passen in mijn eigen webdesign.
+Hier wilde ik een afbeelding toevoegen van mijn crazy8, maar deze heb ik helaas nergens meer kunnen vinden. Wel heb ik nog afbeeldingen van mijn conceptvoorstel.
 
 <img
-   src="images/Foto 18-10-2026 om 14.23.jpg"/>
+src="images/conceptvoorstel1.PNG"/>
+<img
+src="images/conceptvoorstel2.PNG"/>
+<img
+src="images/conceptvoorstel3.PNG"/>
+<img
+src="images/conceptvoorstel4.PNG"/>
+<img
+src="images/conceptvoorstel5.PNG"/>
+<img
+src="images/conceptvoorstel6.PNG"/>
+
+### 8 sept - Deepdive Light&Dark theme
+
+Na het volgen van de deep-dive over de light en dark mode heb ik alvast een code kunnen schrijven voor de kleuren die ik voor mijn eigen website wilde gaan gebruiken.
+
+<img
+   src="images/code-light-dark-theme.jpeg"/>
 
 ### 7 sept - Sprint 1 - Ma: Sprintplanning + WS1
 
