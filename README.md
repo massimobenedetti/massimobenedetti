@@ -4,10 +4,126 @@ Het staat model voor digitale tuintjes welke bij 'Het web is voor iedereen' door
 
 ## Learning Log
 
+### HTML validatie W3 richtlijnen
+W3 validation
+<img
+src="images/html-validatie.png"/>
+
+De enige feedback die deze test mij gaf was om de heading nog extra te identifyen. Voor mij was dit echter niet nodig aangezien al deze heading dezelfde opmaak hadden gekregen en er dus geen onderscheid was.
+
+### WCAG checklist (European Accessibility Act test)
+Ik heb een klasgenoot deze checklist die we gekregen hebben laten invullen aan de hand van de laatste versie van mijn website.
+Hier kwamen gelukkig geen punten uit die verbetering nodig hadden.
+
+<img
+src="images/WCAG1.png"/>
+<img
+src="images/WCAG2.png"/>
+<img
+src="images/WCAG3.png"/>
+<img
+src="images/WCAG4.png"/>
+<img
+src="images/WCAG5.png"/>
+
+
+
+### Toegankelijkheid test (toetsenbord en screenreader)
+Ik heb mijn website geprobeerd te gebruiken met enkel mijn toetsenbord. Dit lukte mij goed en heb dit daarna door klasgenoten ook laten proberen waarbij het gelukkig ook allemaal goed was gegaan.
+<img
+src="images/toetsenbord-test.MP4"/>
+
+
+Ook heb ik de website met een screenreader gebruikt. Dit werkte goed en hier heb ik tijdens de expo aan het eind van het blok ook positieve feedback op ontvangen.
+<img
+src="images/screenreader.png"/>
+
+
+
+### 26 okt - Eindexpo
+Vandaag hebben we bij elkaar gekeken wat iedereen gemaakt heeft.
+Via dit formulier kregen we feedback van onze mede-leerlingen op onze website;
+<img
+src="images/sticky-stickers.png"/>
+
+Ook hebben we met een mede-student de webby test gedaan van onze website en onze learning log doorgenomen;
+<img
+src="images/webby.png"/>
+
+<img
+src="images/learning-log.png"/>
+
+
+### 23 okt - Sprint 3 - Vr: Werkgroep 18
+Feedback van Sanne;
+- preciezer bronnen aangeven in je code
+- meer plaatjes in learning log toevoegen
+- schetsen van songtekst invoegen
+- cookie-melding aanpassen
+- testen European Accessibility Act
+- HTML validatie met W3C HTML richtlijnen testen
+- bruikbaarheid toetsenbord en screenreader invoegen in learning log
+
+Ook heb ik van Sanne feedback gekregen op mijn cookie melding.
+Dit was mijn huidige cookie melding;
+<img
+src="images/derde-cookie.PNG"/>
+
+De feedback die ik heb gekregen;
+- lettertype en uitstraling zijn niet volwassen genoeg voor een cookie melding
+- het venster moet smaller
+
+Deze feedback heb ik vervolgens verwerkt naar de volgende versie;
+<img
+src="images/laatste-cookie.png"/>
+
+Ook heb ik mijn songtekst helemaal afgemaakt;
+<img
+src="images/laatste-versie-songtekst.MP4"/>
+
+Retrospect;
+<img
+src="images/retrospect3-1.png"/>
+
+<img
+src="images/retrospect3-2.png"/>
+
+### 21 okt - Sprint 3 - Wo: Werkgroep 17
+Ik was deze dag helaas afwezig
+
+### 19 okt - Sprint 3 - Ma: Werkgroep 16
+Hoe webby is mijn website formulier;
+<img
+src="images/hoe-webby-is-mijn-website.png"/>
+
 ### 9 okt - Sprint 3 - Vr: Werkgroep 15
+1. Ik gebruik vooral font-size, font-weight, font-style, letter-spacing en line-height om de tekst vorm te geven.
+
+2. font-size voor hiërarchie, font-weight om woorden opvallender te maken, met font-style heb ik de nadruk gelegd op de belangrijkste woorden, line-height om extra ruimte tussen regels te voegen.
+
+3. Ik zou animaties kunnen gebruiken om de nadruk op de meest sprekende woorden nog te vergroten
+
+Mijn songtekst tot nu toe;
+<img
+src="images/digitale-versie-songtekst.PNG"/>
+
+Ook heb ik vandaag een scrollanimatie toegevoegd aan mijn webpagina;
+<img
+src="images/video-scrollanimatie.MP4"/>
 
 ### 7 okt - Sprint 3 - Wo: Werkgroep 14
+Ik heb vandaag de knoppen van de dark/light theme een mooie passende opmaak gegeven;
+<img
+src="images/knoppen-1.PNG"/>
 
+<img
+src="images/knoppen-2.PNG"/>
+
+Ook heb ik op mijn iPad schetsen gemaakt van mijn ideeën die ik in mijn typografisch experiment wil gaan verwerken;
+<img
+src="images/schetsen-typografie.png"/>
+
+Check-out;
 1. Een grid kan houvast geven bij het plaatsen en uitlijnen van elementen. Zo ontstaat er een consistente en overzichtelijke vormgeving.
 
 2. Het gebruiken van een grid, werken met hiërarchie en het gebruiken van consistente spacing.
@@ -37,6 +153,13 @@ Het staat model voor digitale tuintjes welke bij 'Het web is voor iedereen' door
 3. Dan zou ik kiezen voor grootte, omdat je snel duidelijk kunt maken welke informatie het belangrijkste is. Het is ook een eenvoudige manier om hiërarchie aan te brengen zonder verschillende lettertypes of ingewikkelde vormen te gebruiken.
 
 ### 2 okt - Sprint 2 - Vr: Werkgroep 12
+Retrospective:
+<img
+src="images/retrospect2-1.png"/>
+
+<img
+src="images/retrospect2-2.png"/>
+
 
 Feedback van Sanne;
 Door afwezigheid ivm ziekte heb ik de afgelopen dagen weinig kunnen doen.
@@ -44,10 +167,33 @@ Ik heb wel een mooi lijstje opgesteld van de feedback en wat ik hiermee wil doen
 <img
 src="images/feedback sanne sprint 2.jpeg"/>
 
+Na de feedback van Sanne heb ik de cookie-melding ook aangepast, deze is later nog verder verfijnd.
+<img
+src="images/tweede-cookie-1.PNG"/>
+
+<img
+src="images/tweede-cookie-2.PNG"/>
+
 ### 30 sept - Sprint 2 - Wo: Werkgroep 11
+1. WCAG= Web Content Accesibility Guidelines (internationale richtlijnen voor teogankelijke websites).  A11y is een andere manier van schrijven voor het woord accessibility.
+
+De verdere tests met accessibility moet ik nog uitvoeren.
 
 ### 28 sept - Sprint 2 - Ma: Werkgroep 10
 
+Bi-weekly geek 2
+<img
+src="images/bi-weekly-geek-2.png"/>
+
+Vandaag heb ik ook een cookie-melding verwerkt in mijn webpagina;
+<img
+src="images/eerste-cookie-1.PNG"/>
+
+<img
+src="images/eerste-cookie-2.PNG"/>
+
+
+Check-out:
 1. Met deze uitspraak bedoelt Vasilis dat hij zich liever richt op hoe prettig en gebruiksvriendelijk HTML-elementen te gebruiken zijn, dan alleen op de betekenis en de structuur van de HTML-code. Zo is de website goed te bedienen en te begrijpen voor bijvoorbeeld gebruik met een toetsenbord of screenreader.
 
 2. De meest voorkomende zijn slechtziend, of blind, zijn en slechthorend, of doof, zijn.
@@ -59,7 +205,9 @@ src="images/feedback sanne sprint 2.jpeg"/>
 
 ### 25 sept - Sprint 2 - Vr: Werkgroep 9
 
-1.
+1. Met HTML-validatie kan je je geschreven code controleren aan de hand van een validator. Zo kan je kleine fouten in je code vinden die je normaal niet zo snel zouden opvallen. Dit is vooral belangrijk omdat screenreaders in de war kunnen raken door niet helemaal kloppende code.
+
+Doordat ik vandaag ziek was heb ik dit helaas nog niet kunnen uitvoeren en zal ik dit aan het eind van het blok nog uitvoeren.
 
 ### 23 sept - Sprint 2 - Wo: Werkgroep 8
 
@@ -84,6 +232,18 @@ src="images/feedback sanne sprint 2.jpeg"/>
 ### 18 sept - Sprint 1 - Vr: Voortgangsgesprek
 
 Vandaag kreeg ik feedback van Sanne. Het grootste kritiekpunt was dat mijn ReadMe nog niet ver genoeg ingevuld was. Hier kan ik de komende weken dus mee aan de slag. Verder had ik in mijn code gebruikt gemaakt van classes wat niet mocht. Dit heb ik vandaag meteen aangepast. Ook had Sanne het idee dat ik mijn website nog wat spannender kan maken door bijvoorbeeld een animatie toe te passen.
+
+Ook hebben we in groepjes een opdracht gemaakt over sketch aantekeningen;
+<img
+src="images/opdracht-sketchaantekeningen.JPG"/>
+
+
+We hebben vandaag ook een retrospect ingevuld over afgelopen blok;
+<img
+src="images/retrospect1-1.png"/>
+
+<img
+src="images/retrospect1-2.png"/>
 
 Check-out:
 
