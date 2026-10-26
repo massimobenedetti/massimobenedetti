@@ -282,10 +282,10 @@ Doordat ik over een eigen interesse vertel aan de hand van veel eigen beelden en
 Bi-weekly geek 1
 
 <img
-src="images/bi-weekly-geek-1-deelvragen.PNG"/>
+src="images/bi-weekly-geek-1-deelvragen.png"/>
 
 <img
-src="images/bi-weekly-geek-1-onderzoeksmethoden.PNG">
+src="images/bi-weekly-geek-1-onderzoeksmethoden.png">
 
 Check-out
 1. Een website kan snel lelijk worden doordat deze niet 'responsive' is. Hiermee wordt bedoeld dat een website niet voorbereid is op verschillende schermgroottes. Als je de website dan opent op een kleiner formaat zoals een telefoon, verspringen er meestal allerlei teksten en afbeeldingen. Dit kan door een simpele regel in code, die we gekregen hebben van Vasilis en bij de tweede vraag benoemd staat, wel responsive gemaakt worden.
